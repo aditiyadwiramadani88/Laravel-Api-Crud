@@ -8,7 +8,7 @@ use Ahc\Jwt\JWTException;
 use App\models\User;
 class Token{
     public function handle(Request $request, Closure $next){
-        $cek_token = $request->header('token');
+        $cek_token = $request->header('Authorization');
         if(!$cek_token){
             return response()->json(['msg' => 'required headers token '], 402);
         }
